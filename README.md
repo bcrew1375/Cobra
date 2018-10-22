@@ -1,5 +1,5 @@
 # Cobra
-A Nibbles-like clone written in Python.  There is a computer-controlled opponent implemented.
+A Nibbles-like clone written in Python.  There is a computer-controlled opponent enabled by default.  The opponent can be disabled by setting "OPPONENT_ON" to "False".
 
 ![](https://github.com/bcrew1375/Cobra/blob/assets/Pic1.png?raw=true)
 
