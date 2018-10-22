@@ -21,7 +21,7 @@ OPPONENT_START_Y = 12
 
 # This will determine how long the opponent takes to acquire a new food target.
 # Raising it will give the player more time to respond to new food appearing.
-OPPONENT_TURNS_TO_WAIT = 1
+OPPONENT_TURNS_TO_WAIT = 4
 
 COBRA_START_DIRECTION = "Up"
 # Number of milliseconds between player movements.
@@ -362,10 +362,12 @@ def main():
 
                 cobra2.move()
                 cobra2.collision = check_collision(board1, cobra2)
+                if cobra2.collision == True:
+                    gameRunning = False
 
             cobra1.collision = check_collision(board1, cobra1)
 
-            if cobra1.collision == True or cobra2.collision == True:
+            if cobra1.collision == True:
                 gameRunning = False
 
             pygame.time.wait(MOVEMENT_DELAY)
