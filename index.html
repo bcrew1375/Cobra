@@ -46,7 +46,7 @@ function runit() {
 <h3>Try This</h3> 
 <form> 
 <textarea id="yourcode" cols="40" rows="10">import turtle
-import pygame
+#import pygame
 from random import randint
 
 BOARD_SIZE_WIDTH = 25
@@ -133,7 +133,7 @@ class Board(object):
                 elif space_object == EMPTY_SPACE:
                     color = BLACK
 
-                pygame.draw.rect(screen, color, pygame.Rect(drawX, drawY, BOARD_SPACE_SIZE, BOARD_SPACE_SIZE))
+#                pygame.draw.rect(screen, color, pygame.Rect(drawX, drawY, BOARD_SPACE_SIZE, BOARD_SPACE_SIZE))
     
 class Cobra(object):
     segmentsToAdd = 1
@@ -348,49 +348,49 @@ def main():
     if OPPONENT_ON == True:
         cobra2.add_segment(Opponent.Segment(cobra2.posX, cobra2.posY))
 
-    pygame.init()
+#    pygame.init()
 
-    screen = pygame.display.set_mode((DISPLAY_RESOLUTION_WIDTH, DISPLAY_RESOLUTION_HEIGHT))
+#    screen = pygame.display.set_mode((DISPLAY_RESOLUTION_WIDTH, DISPLAY_RESOLUTION_HEIGHT))
     gameRunning = True
     paused = False
 
     while gameRunning == True:
 
-        events = pygame.event.get()
-        for event in events:
-           if event.type == pygame.QUIT:
-               pygame.quit()
-           if event.type == pygame.KEYDOWN:
-               if event.key == pygame.K_UP:
-                   cobra1.direction = "Up"
-               if event.key == pygame.K_DOWN:
-                   cobra1.direction = "Down"
-               if event.key == pygame.K_LEFT:
-                   cobra1.direction = "Left"
-               if event.key == pygame.K_RIGHT:
-                   cobra1.direction = "Right"
-               if event.key == pygame.K_w:
-                   cobra2.direction = "Up"
-               if event.key == pygame.K_s:
-                   cobra2.direction = "Down"
-               if event.key == pygame.K_a:
-                   cobra2.direction = "Left"
-               if event.key == pygame.K_d:
-                   cobra2.direction = "Right"
-               if event.key == pygame.K_ESCAPE:
-                   pygame.quit()
-               if event.key == pygame.K_SPACE:
-                   if not paused:
-                       paused = True
-                   else:
-                       paused = False
+#        events = pygame.event.get()
+#        for event in events:
+#           if event.type == pygame.QUIT:
+#               pygame.quit()
+#           if event.type == pygame.KEYDOWN:
+#               if event.key == pygame.K_UP:
+#                   cobra1.direction = "Up"
+#               if event.key == pygame.K_DOWN:
+#                   cobra1.direction = "Down"
+#               if event.key == pygame.K_LEFT:
+#                   cobra1.direction = "Left"
+#               if event.key == pygame.K_RIGHT:
+#                   cobra1.direction = "Right"
+#               if event.key == pygame.K_w:
+#                   cobra2.direction = "Up"
+#               if event.key == pygame.K_s:
+#                   cobra2.direction = "Down"
+#               if event.key == pygame.K_a:
+#                   cobra2.direction = "Left"
+#               if event.key == pygame.K_d:
+#                   cobra2.direction = "Right"
+#               if event.key == pygame.K_ESCAPE:
+#                   pygame.quit()
+#               if event.key == pygame.K_SPACE:
+#                   if not paused:
+#                       paused = True
+#                   else:
+#                       paused = False
 
         if not paused:
             update_segments(board1, cobra1)
             if OPPONENT_ON == True:
                 update_segments(board1, cobra2)
             board1.draw_board(screen)
-            pygame.display.update()
+#            pygame.display.update()
 
             if not board1.foodOnBoard:
                 board1.create_food()
@@ -418,7 +418,7 @@ def main():
             if cobra1.collision == True:
                 gameRunning = False
 
-            pygame.time.wait(MOVEMENT_DELAY)
+#            pygame.time.wait(MOVEMENT_DELAY)
 
 main() 
 </textarea><br /> 
